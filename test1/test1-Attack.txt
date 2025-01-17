@@ -1,0 +1,49 @@
+Try 1
+
+5-3-2 Formation Analysis (Attack)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Hector Fort, Gerard Martin, Inigo Martinez, Jules Kounde, Eric Garcia
+Midfielders: Gavi, Pedri, Frenkie de Jong
+Forwards: Raphinha, Lamine Yamal
+
+Try 2
+
+5-3-2 Formation Analysis (Attack)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Jules Kounde, Inigo Martinez, Eric Garcia, Hector Fort, Gerard Martin
+Midfielders: Pedri, Frenkie de Jong, Gavi
+Forwards: Robert Lewandowski, Lamine Yamal
+
+Try 3
+
+5-3-2 Formation Analysis (Attack)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Jules Kounde, Inigo Martinez, Eric Garcia, Hector Fort, Sergi Dominguez
+Midfielders: Frenkie de Jong, Pedri, Gavi
+Forwards: Raphinha, Lamine Yamal
+
+Try 4
+
+5-3-2 Formation Analysis (Attack)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Jules Kounde, Inigo Martinez, Eric Garcia, Hector Fort, Sergi Dominguez
+Midfielders: Frenkie de Jong, Pedri, Gavi
+Forwards: Raphinha, Lamine Yamal
+
+Try 5
+
+5-3-2 Formation Analysis (Attack)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Eric Garcia, Inigo Martinez, Jules Kounde, Hector Fort, Gerard Martin
+Midfielders: Pedri, Frenkie de Jong, Gavi
+Forwards: Raphinha, Lamine Yamal

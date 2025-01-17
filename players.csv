@@ -1,0 +1,21 @@
+player_id,name,position,age,nationality,preferred_foot,height_cm,weight_kg,market_value_million_eur,rating
+1,Wojciech Szczesny,Keeper,31,Poland,Right,195,84,35,7.5
+2,Marc-Andre ter Stegen,Keeper,29,Germany,Right,187,85,55,8.0
+3,Inaki Pena,Keeper,22,Spain,Right,184,77,5,6.5
+4,Inigo Martinez,Defender,30,Spain,Left,182,81,20,7.0
+5,Andreas Christensen,Defender,25,Denmark,Right,188,82,30,7.8
+6,Jules Koundé,Defender,23,France,Right,181,75,60,8.2
+7,Ronald Araujo,Defender,22,Uruguay,Right,191,86,50,8.0
+8,Eric Garcia,Defender,21,Spain,Right,183,73,20,6.8
+9,Álex Balde,Defender,18,Spain,Left,175,69,15,7.2
+10,Dani Olmo,Midfielder,23,Spain,Right,179,72,45,7.5
+11,Frenkie de Jong,Midfielder,24,Netherlands,Right,180,74,70,8.5
+12,Pedri,Midfielder,18,Spain,Right,174,65,80,8.0
+13,Pablo Torre,Midfielder,18,Spain,Right,173,66,10,6.5
+14,Gavi,Midfielder,17,Spain,Right,173,68,40,7.8
+15,Robert Lewandowski,Forward,33,Poland,Right,185,81,60,9.0
+16,Raphinha,Forward,25,Brazil,Left,176,68,40,7.9
+17,Ferran Torres,Forward,21,Spain,Right,184,77,50,7.7
+18,Ansu Fati,Forward,18,Spain,Right,178,66,60,8.3
+19,Lamine Yamal,Forward,16,Spain,Left,170,60,5,6.0
+
