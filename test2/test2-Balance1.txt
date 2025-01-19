@@ -1,0 +1,47 @@
+Try 1
+
+3-4-3 Formation Analysis (Balance)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Jules Kounde, Inigo Martinez, Eric Garcia
+Midfielders: Frenkie de Jong, Pedri, Gavi, Fermin Lopez
+Forwards: Raphinha, Lamine Yamal, Robert Lewandowski
+
+CORRECT - Marc Casado set as injured.
+
+Try 2
+
+3-4-3 Formation Analysis (Balance)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Eric Garcia, Inigo Martinez, Jules Kounde
+Midfielders: Marc Casado, Pedri, Gavi, Fermin Lopez
+Forwards: Raphinha, Lamine Yamal, Robert Lewandowski
+
+CORRECT - Frankie de Jong received red card, Marc Casado not injured anymore
+
+Try 3
+
+3-4-3 Formation Analysis (Balance)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Wojciech Szczesny
+Defenders: Jules Kounde, Inigo Martinez, Eric Garcia
+Midfielders: Pedri, Frenkie de Jong, Gavi, Marc Casado
+Forwards: Lamine Yamal, Raphinha, Robert Lewandowski
+
+INCORRECT- Yamal set as injured- probably because he is the only forward, playing with left foot
+
+Try 4
+
+3-4-3 Formation Analysis (Balance)
+--------------------------------------------------
+Recommended Lineup:
+Keeper: Marc-Andre Ter Stegen
+Defenders: Jules Kounde, Inigo Martinez, Ronald Araujo
+Midfielders: Pedri, Frenkie de Jong, Dani Olmo, Marc Casado
+Forwards: Lamine Yamal, Raphinha, Robert Lewandowski
+
+CORRECT - Marc-Andre Ter Stegen, Ronald Araujo and Dani Olmo marked as uninjured
