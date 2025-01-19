@@ -1,0 +1,467 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/football#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#################################################
+# Ontology Definition
+#################################################
+ex:FootballOntology rdf:type owl:Ontology .
+
+##########
+# Classes
+##########
+
+# Player Class
+ex:Player rdf:type owl:Class .
+
+# Match Class
+ex:Match rdf:type owl:Class .
+
+# Event Class
+ex:Event rdf:type owl:Class .
+
+# Subclasses of Event
+ex:YellowCard rdf:type owl:Class ;
+    rdfs:subClassOf ex:Event .
+
+ex:RedCard rdf:type owl:Class ;
+    rdfs:subClassOf ex:Event .
+
+ex:Injury rdf:type owl:Class ;
+    rdfs:subClassOf ex:Event .
+
+# Suspension Class
+ex:Suspension rdf:type owl:Class .
+
+# Position Class
+ex:Position rdf:type owl:Class .
+
+# Formation Class
+ex:Formation rdf:type owl:Class .
+
+# Team Class
+ex:Team rdf:type owl:Class .
+
+# PositionRequirement Class
+ex:PositionRequirement rdf:type owl:Class .
+
+###############
+# Properties
+###############
+
+# Separate naming properties for Player, Team, and Formation
+
+ex:playerName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range xsd:string .
+
+ex:teamName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Team ;
+    rdfs:range xsd:string .
+
+ex:formationName rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Formation ;
+    rdfs:range xsd:string .
+
+
+# canPlayPosition Property
+ex:canPlayPosition rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range ex:Position .
+
+# playsFor Property
+ex:playsFor rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range ex:Team .
+
+# injured Property
+ex:injured rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range xsd:boolean .
+
+# hasEvent Property
+ex:hasEvent rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Match ;
+    rdfs:range ex:Event .
+
+# involvesPlayer Property
+ex:involvesPlayer rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Event ;
+    rdfs:range ex:Player .
+
+# suspendedFor Property
+ex:suspendedFor rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range ex:Match .
+
+# requiresPosition Property
+ex:requiresPosition rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Formation ;
+    rdfs:range ex:PositionRequirement .
+
+# position Property
+ex:position rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:PositionRequirement ;
+    rdfs:range ex:Position .
+
+# minPlayers Property
+ex:minPlayers rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PositionRequirement ;
+    rdfs:range xsd:integer .
+
+# maxPlayers Property
+ex:maxPlayers rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:PositionRequirement ;
+    rdfs:range xsd:integer .
+
+# hasDate Property
+ex:hasDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Match ;
+    rdfs:range xsd:date .
+
+# homeTeam Property
+ex:homeTeam rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Match ;
+    rdfs:range ex:Team .
+
+# awayTeam Property
+ex:awayTeam rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Match ;
+    rdfs:range ex:Team .
+
+# occurredIn Property
+ex:occurredIn rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Event ;
+    rdfs:range ex:Match .
+
+# yellowCards Property
+ex:yellowCards rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range xsd:integer .
+
+# redCard Property
+ex:redCard rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Player ;
+    rdfs:range xsd:boolean .
+
+###############
+# Individuals
+###############
+
+### Positions ###
+ex:Keeper rdf:type ex:Position .
+ex:Defender rdf:type ex:Position .
+ex:Midfielder rdf:type ex:Position .
+ex:Forward rdf:type ex:Position .
+
+### Teams ###
+ex:Team_FCBarcelona rdf:type ex:Team ;
+    ex:teamName "FC Barcelona"^^xsd:string .
+
+ex:Team_Opponent rdf:type ex:Team ;
+    ex:teamName "Opponent Team"^^xsd:string .
+
+### Players ###
+# Player 1: Wojciech Szczesny
+ex:Player_1 rdf:type ex:Player ;
+    ex:playerName "Wojciech Szczesny"^^xsd:string ;
+    ex:canPlayPosition ex:Keeper ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 2: Marc-Andre ter Stegen
+ex:Player_2 rdf:type ex:Player ;
+    ex:playerName "Marc-Andre ter Stegen"^^xsd:string ;
+    ex:canPlayPosition ex:Keeper ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "true"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 3: Inaki Pena
+ex:Player_3 rdf:type ex:Player ;
+    ex:playerName "Inaki Pena"^^xsd:string ;
+    ex:canPlayPosition ex:Keeper ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "true"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 4: Inigo Martinez
+ex:Player_4 rdf:type ex:Player ;
+    ex:playerName "Inigo Martinez"^^xsd:string ;
+    ex:canPlayPosition ex:Defender ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 5: Andreas Christensen
+ex:Player_5 rdf:type ex:Player ;
+    ex:playerName "Andreas Christensen"^^xsd:string ;
+    ex:canPlayPosition ex:Defender ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "true"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "4"^^xsd:integer .
+
+# Player 6: Jules Koundé
+ex:Player_6 rdf:type ex:Player ;
+    ex:playerName "Jules Koundé"^^xsd:string ;
+    ex:canPlayPosition ex:Defender ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 7: Ronald Araujo
+ex:Player_7 rdf:type ex:Player ;
+    ex:playerName "Ronald Araujo"^^xsd:string ;
+    ex:canPlayPosition ex:Defender ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "true"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 8: Eric Garcia
+ex:Player_8 rdf:type ex:Player ;
+    ex:playerName "Eric Garcia"^^xsd:string ;
+    ex:canPlayPosition ex:Defender ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "5"^^xsd:integer .
+
+# Player 9: Alejandro Balde
+ex:Player_9 rdf:type ex:Player ;
+    ex:playerName "Alejandro Balde"^^xsd:string ;
+    ex:canPlayPosition ex:Defender ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "true"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 10: Dani Olmo
+ex:Player_10 rdf:type ex:Player ;
+    ex:playerName "Dani Olmo"^^xsd:string ;
+    ex:canPlayPosition ex:Midfielder ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "true"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 11: Frenkie de Jong
+ex:Player_11 rdf:type ex:Player ;
+    ex:playerName "Frenkie de Jong"^^xsd:string ;
+    ex:canPlayPosition ex:Midfielder ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 12: Pedri
+ex:Player_12 rdf:type ex:Player ;
+    ex:playerName "Pedri"^^xsd:string ;
+    ex:canPlayPosition ex:Midfielder ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 13: Pablo Torre
+ex:Player_13 rdf:type ex:Player ;
+    ex:playerName "Pablo Torre"^^xsd:string ;
+    ex:canPlayPosition ex:Midfielder ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 14: Gavi
+ex:Player_14 rdf:type ex:Player ;
+    ex:playerName "Gavi"^^xsd:string ;
+    ex:canPlayPosition ex:Midfielder ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 15: Robert Lewandowski
+ex:Player_15 rdf:type ex:Player ;
+    ex:playerName "Robert Lewandowski"^^xsd:string ;
+    ex:canPlayPosition ex:Forward ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 16: Raphinha
+ex:Player_16 rdf:type ex:Player ;
+    ex:playerName "Raphinha"^^xsd:string ;
+    ex:canPlayPosition ex:Forward ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 17: Ferran Torres
+ex:Player_17 rdf:type ex:Player ;
+    ex:playerName "Ferran Torres"^^xsd:string ;
+    ex:canPlayPosition ex:Forward ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 18: Ansu Fati
+ex:Player_18 rdf:type ex:Player ;
+    ex:playerName "Ansu Fati"^^xsd:string ;
+    ex:canPlayPosition ex:Forward ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+# Player 19: Lamine Yamal
+ex:Player_19 rdf:type ex:Player ;
+    ex:playerName "Lamine Yamal"^^xsd:string ;
+    ex:canPlayPosition ex:Forward ;
+    ex:playsFor ex:Team_FCBarcelona ;
+    ex:injured "false"^^xsd:boolean ;
+    ex:redCard "false"^^xsd:boolean ;
+    ex:yellowCards "0"^^xsd:integer .
+
+### Matches ###
+
+ex:Match_Upcoming rdf:type ex:Match ;
+    ex:hasDate "2024-10-26"^^xsd:date ;
+    ex:homeTeam ex:Team_FCBarcelona ;
+    ex:awayTeam ex:Team_Opponent .
+
+# Next Match for Suspensions
+
+ex:Next_Match rdf:type ex:Match ;
+    ex:hasDate "2024-11-02"^^xsd:date ;
+    ex:homeTeam ex:Team_Opponent ;
+    ex:awayTeam ex:Team_FCBarcelona .
+
+### Events ###
+
+# Red Card Event involving Player 16 (Raphinha)
+ex:RedCardEvent_16 rdf:type ex:RedCard ;
+    ex:involvesPlayer ex:Player_16 ;
+    ex:occurredIn ex:Match_Upcoming .
+
+### Suspensions ###
+
+# Player 16 (Raphinha) is suspended for the next match due to a red card.
+ex:Player_16 ex:suspendedFor ex:Next_Match .
+
+# Player 8 (Eric Garcia) is suspended for the next match due to yellow card accumulation.
+ex:Player_8 ex:suspendedFor ex:Next_Match .
+
+### Formations ###
+
+# Formation: 4-3-3
+ex:Formation_433 rdf:type ex:Formation ;
+    ex:formationName "4-3-3"^^xsd:string ;
+    ex:requiresPosition ex:PR_GK_1 , ex:PR_DEF_4 , ex:PR_MID_3 , ex:PR_FWD_3 .
+
+# Formation: 4-4-2
+ex:Formation_442 rdf:type ex:Formation ;
+    ex:formationName "4-4-2"^^xsd:string ;
+    ex:requiresPosition ex:PR_GK_1_442 , ex:PR_DEF_4_442 , ex:PR_MID_4 , ex:PR_FWD_2 .
+
+### Position Requirements ###
+
+# For Formation 4-3-3
+
+# Goalkeeper Requirement
+ex:PR_GK_1 rdf:type ex:PositionRequirement ;
+    ex:position ex:Keeper ;
+    ex:minPlayers "1"^^xsd:integer ;
+    ex:maxPlayers "1"^^xsd:integer .
+
+# Defender Requirement
+ex:PR_DEF_4 rdf:type ex:PositionRequirement ;
+    ex:position ex:Defender ;
+    ex:minPlayers "4"^^xsd:integer ;
+    ex:maxPlayers "4"^^xsd:integer .
+
+# Midfielder Requirement
+ex:PR_MID_3 rdf:type ex:PositionRequirement ;
+    ex:position ex:Midfielder ;
+    ex:minPlayers "3"^^xsd:integer ;
+    ex:maxPlayers "3"^^xsd:integer .
+
+# Forward Requirement
+ex:PR_FWD_3 rdf:type ex:PositionRequirement ;
+    ex:position ex:Forward ;
+    ex:minPlayers "3"^^xsd:integer ;
+    ex:maxPlayers "3"^^xsd:integer .
+
+# For Formation 4-4-2
+
+# Goalkeeper Requirement
+ex:PR_GK_1_442 rdf:type ex:PositionRequirement ;
+    ex:position ex:Keeper ;
+    ex:minPlayers "1"^^xsd:integer ;
+    ex:maxPlayers "1"^^xsd:integer .
+
+# Defender Requirement
+ex:PR_DEF_4_442 rdf:type ex:PositionRequirement ;
+    ex:position ex:Defender ;
+    ex:minPlayers "4"^^xsd:integer ;
+    ex:maxPlayers "4"^^xsd:integer .
+
+# Midfielder Requirement
+ex:PR_MID_4 rdf:type ex:PositionRequirement ;
+    ex:position ex:Midfielder ;
+    ex:minPlayers "4"^^xsd:integer ;
+    ex:maxPlayers "4"^^xsd:integer .
+
+# Forward Requirement
+ex:PR_FWD_2 rdf:type ex:PositionRequirement ;
+    ex:position ex:Forward ;
+    ex:minPlayers "2"^^xsd:integer ;
+    ex:maxPlayers "2"^^xsd:integer .
+
+# Assigning Position Requirements to Formation 4-4-2
+ex:Formation_442 ex:requiresPosition ex:PR_GK_1_442 , ex:PR_DEF_4_442 , ex:PR_MID_4 , ex:PR_FWD_2 .
+
+# Formation: 5-3-2
+ex:Formation_532 rdf:type ex:Formation ;
+    ex:formationName "5-3-2"^^xsd:string ;
+    ex:requiresPosition ex:PR_GK_1_532 , ex:PR_DEF_5_532 , ex:PR_MID_3_532 , ex:PR_FWD_2_532 .
+
+# Position Requirements for Formation 5-3-2
+
+# Goalkeeper Requirement (1)
+ex:PR_GK_1_532 rdf:type ex:PositionRequirement ;
+    ex:position ex:Keeper ;
+    ex:minPlayers "1"^^xsd:integer ;
+    ex:maxPlayers "1"^^xsd:integer .
+
+# Defender Requirement (5)
+ex:PR_DEF_5_532 rdf:type ex:PositionRequirement ;
+    ex:position ex:Defender ;
+    ex:minPlayers "5"^^xsd:integer ;
+    ex:maxPlayers "5"^^xsd:integer .
+
+# Midfielder Requirement (3)
+ex:PR_MID_3_532 rdf:type ex:PositionRequirement ;
+    ex:position ex:Midfielder ;
+    ex:minPlayers "3"^^xsd:integer ;
+    ex:maxPlayers "3"^^xsd:integer .
+
+# Forward Requirement (2)
+ex:PR_FWD_2_532 rdf:type ex:PositionRequirement ;
+    ex:position ex:Forward ;
+    ex:minPlayers "2"^^xsd:integer ;
+    ex:maxPlayers "2"^^xsd:integer .
+
+ex:Formation_532 ex:requiresPosition ex:PR_GK_1_532 , ex:PR_DEF_5_532 , ex:PR_MID_3_532 , ex:PR_FWD_2_532 .
